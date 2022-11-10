@@ -20,3 +20,12 @@ Run IRTT
 server: irtt server
 client: irtt client -i 10ms -d 1m -l 172 --fill=rand --sfill=rand 10.0.1.1
 ```
+
+Install Docker
+
+Create image
+```
+cd measurements-service
+docker build -t irtt-server .
+```
+
