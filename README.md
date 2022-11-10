@@ -28,4 +28,19 @@ Create image
 cd measurements-service
 docker build -t irtt-server .
 ```
+Proper login to Docker
+```
+docker login -u nuriafe99
+```
+Tag image
+```
+docker tag irtt-server nuriafe99/irtt-server
+```
+Push image to Docker Hub
+```
+docker image push nuriafe99/irtt-server
+```
+
+
+
 
