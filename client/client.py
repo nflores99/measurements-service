@@ -19,7 +19,7 @@ for iter, val in enumerate(round_trips): # add rtt values for each packet
 print(data_rtt)
 
 table_data_rtt = pa.Table.from_pandas(data_rtt) # create table
-pq.write_table(table_data_rtt, 'data_test2.parquet') # create parquet file
+pq.write_table(table_data_rtt, 'data_irtt.parquet') # create parquet file
     
 
 
