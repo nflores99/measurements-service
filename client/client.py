@@ -3,7 +3,7 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 import json
 
-f = open('test2.json') # Opening JSON file
+f = open('irtt_data.json') # Opening JSON file
 data = json.load(f) # returns JSON object as a dictionary
 f.close() # Closing file
 
