@@ -40,6 +40,10 @@ Push image to Docker Hub
 ```
 docker image push nuriafe99/irtt-server
 ```
+Run image 
+```
+docker run -v .:/tmp/results
+```
 
 
 
