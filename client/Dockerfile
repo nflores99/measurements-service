@@ -1,4 +1,7 @@
 FROM golang:1.19.3
 RUN go install github.com/heistp/irtt/cmd/irtt@latest
+RUN mkdir -p /tmp/results
+COPY client-entrypoint.sh /tmp/client-entrypoint.sh
+RUN chmod +x /tmp/client-entrypoint.sh
 
-ENTRYPOINT ["irtt", "client -i 1s -d 1m -l 172 --fill=rand --sfill=rand -o irtt_data.json localhost"]
+ENTRYPOINT ["/tmp/client-entrypoint.sh"]
