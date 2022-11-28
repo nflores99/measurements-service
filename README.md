@@ -27,7 +27,9 @@ Create image
 ```
 cd measurements-service
 docker build -t irtt-server .
+docker build -t combined-meas -f combined/Dockerfile .
 ```
+
 Proper login to Docker
 ```
 docker login -u nuriafe99

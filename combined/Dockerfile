@@ -24,9 +24,9 @@ RUN set -ex \
     && pyenv rehash
 
 # copy python script
-COPY ../ntw-meas/ntw-meas.py /tmp/ntw-meas.py
+COPY ntw-meas/ntw-meas.py /tmp/ntw-meas.py
 
 RUN mkdir -p /tmp/results
-COPY combined-entrypoint.sh /tmp/combined-entrypoint.sh
+COPY combined/combined-entrypoint.sh /tmp/combined-entrypoint.sh
 RUN chmod +x /tmp/combined-entrypoint.sh
 ENTRYPOINT ["/tmp/combined-entrypoint.sh"]
