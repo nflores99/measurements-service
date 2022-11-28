@@ -4,7 +4,7 @@ import json
 import time
 
 duration = 100 # seconds
-sleep_time = 0.5 # seconds
+sleep_time = 0.4 # seconds
 
 meas_duration = 0
 meas_list = []
@@ -13,6 +13,7 @@ while meas_duration < duration:
     t = time.time_ns()
     res = subprocess.check_output(["curl","-s", "http://10.42.3.1:50000"])
     res = res.decode('utf-8').strip()
+    print(res)
     res = json.loads(res)
     res['timestamp'] = t
     meas_list.append(res)
