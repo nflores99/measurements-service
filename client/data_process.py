@@ -15,11 +15,11 @@ data = json.load(f) # returns JSON object as a dictionary
 f.close() # Closing file
 
 round_trips = data["round_trips"]
-data_rtt = pd.DataFrame(columns = ['rtt', 'send', 'receive', 'timestamp', 'X', 'Y']) # creation of dataframe with rtt column
 
 data_rtt_list = [round_trip['delay']['rtt'] for round_trip in round_trips] # list of rtt values
 data_rx_list = [round_trip['delay']['receive'] for round_trip in round_trips] # list of rx times
 data_tx_list = [round_trip['delay']['send'] for round_trip in round_trips] # list of tx times
+data_timestamps_list = [round_trip['timestamps']['client']['send']['wall'] for round_trip in round_trips] # list of timestamps
 
 L = len(round_trips)
 X_list = [X] * L # create a list with X value and same elements as round_trips
