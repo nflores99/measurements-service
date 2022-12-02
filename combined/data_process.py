@@ -12,12 +12,12 @@ Y = int(sys.argv[2]) # take second imput as Y
 # Open delay measurements
 p = Path(__file__).parent.resolve()
 print(p)
-f1 = open(str(p)+'/irtt_data.json') # Opening JSON file
+f1 = open(str(p)+'/irtt_data(1).json') # Opening JSON file
 data1 = json.load(f1) # returns JSON object as a dictionary
 f1.close() # Closing file
 
 # Open network conditions measurements
-f2 = open(str(p)+'/ntw_meas_data.json') # Opening JSON file
+f2 = open(str(p)+'/ntw_meas_data(1).json') # Opening JSON file
 data2 = json.load(f2) # returns JSON object as a dictionary
 f2.close() # Closing file
 
