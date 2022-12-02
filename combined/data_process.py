@@ -12,7 +12,7 @@ Y = int(sys.argv[2]) # take second imput as Y
 # Open delay measurements
 p = Path(__file__).parent.resolve()
 print(p)
-f1 = open(str(p)+'/test-meas.json') # Opening JSON file # CHANGE TO IRTT-DATA.JSON
+f1 = open(str(p)+'/irtt_data.json') # Opening JSON file
 data1 = json.load(f1) # returns JSON object as a dictionary
 f1.close() # Closing file
 
@@ -54,10 +54,10 @@ data_df = pd.DataFrame({'rtt':data_rtt_list,
                         'channel':[data_channel[i] for i in idx],
                         'band':[data_band[i] for i in idx]})
 
-print(data_df.head())
+print(data_df.head(10))
 
 table_data_rtt = pa.Table.from_pandas(data_df) # create table
-pq.write_table(table_data_rtt, 'irtt_data.parquet') # create parquet file 
+pq.write_table(table_data_rtt, 'dataset.parquet') # create parquet file 
 
 
 
