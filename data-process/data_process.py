@@ -6,18 +6,19 @@ import json
 from pathlib import Path
 import sys
 
-X = int(sys.argv[1]) # take first imput as X
-Y = int(sys.argv[2]) # take second imput as Y
+X = float(sys.argv[1]) # take first imput as X
+Y = float(sys.argv[2]) # take second imput as Y
+num = str(sys.argv[3]) # take the input as number of dataset
 
 # Open delay measurements
 p = Path(__file__).parent.resolve()
 print(p)
-f1 = open(str(p)+'/irtt_data1.json') # Opening JSON file
+f1 = open(str(p)+'/irtt_data'+num+'.json') # Opening JSON file
 data1 = json.load(f1) # returns JSON object as a dictionary
 f1.close() # Closing file
 
 # Open network conditions measurements
-f2 = open(str(p)+'/ntw_meas_data1.json') # Opening JSON file
+f2 = open(str(p)+'/ntw_meas_data'+num+'.json') # Opening JSON file
 data2 = json.load(f2) # returns JSON object as a dictionary
 f2.close() # Closing file
 
@@ -57,7 +58,7 @@ data_df = pd.DataFrame({'rtt':data_rtt_list,
 print(data_df.head(10))
 
 table_data_rtt = pa.Table.from_pandas(data_df) # create table
-pq.write_table(table_data_rtt, 'dataset.parquet') # create parquet file 
+pq.write_table(table_data_rtt, 'dataset_val2_'+num+'.parquet') # create parquet file 
 
 
 
